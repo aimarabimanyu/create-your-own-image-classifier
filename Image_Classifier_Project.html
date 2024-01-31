@@ -7616,7 +7616,6 @@ Saving to: ‘flower_data.tar.gz’
 flower_data.tar.gz  100%[===================&gt;] 328.90M  46.3MB/s    in 7.6s    
 
 2024-01-30 10:05:28 (43.5 MB/s) - ‘flower_data.tar.gz’ saved [344873452/344873452]
-
 </pre>
 </div>
 </div>
@@ -8014,8 +8013,11 @@ Epoch: 10/10..  Training Loss: 0.765..  Training Accuracy: 0.802..  Valid Loss: 
 <span class="n">checkpoint</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'classifier'</span> <span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">fc</span><span class="p">,</span>
     <span class="s1">'state_dict'</span> <span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
-    <span class="s1">'class_to_idx'</span> <span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">class_to_idx</span><span class="p">,</span>
-    <span class="s1">'arch'</span> <span class="p">:</span> <span class="s1">'resnet50'</span><span class="p">,</span>
+    <span class="s1">'class_to_idx'</span> <span class="p">:</span> <span class="n">class_to_idx</span><span class="p">,</span>
+    <span class="s1">'arch'</span> <span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">arch</span><span class="p">,</span>
+    <span class="s1">'epochs'</span> <span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">epochs</span><span class="p">,</span>
+    <span class="s1">'optimizer'</span> <span class="p">:</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
+    <span class="s1">'criterion'</span> <span class="p">:</span> <span class="s1">'NLLLoss'</span><span class="p">,</span>
     <span class="s1">'weight'</span> <span class="p">:</span> <span class="s1">'DEFAULT'</span><span class="p">,</span>
 <span class="p">}</span>
 

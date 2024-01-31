@@ -15,7 +15,10 @@ def load_checkpoint(args):
     
     # Load whatever is needed for the model
     model = getattr(models, checkpoint['arch'])(weights = checkpoint['weight'])
-    model.fc = checkpoint['classifier']
+    if checkpoint['arch'] in ['vgg11', 'vgg13', 'vgg16']:
+        model.classifier = checkpoint['classifier']
+    else:
+        model.fc = checkpoint['classifier']
     model.load_state_dict(checkpoint['state_dict'])
     model.class_to_idx = checkpoint['class_to_idx']
     
